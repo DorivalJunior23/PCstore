@@ -1,31 +1,9 @@
-# TABELAS 
 
-## Produto
-id
-nome
-descrição
-foto
-valor
-sacolas produtoNaSacola[]
+Uma loja de periféricos criado do 0, utilizando React.js, TypeScript, Tailwindcss, Vite.js e Prisma.js
 
-## Sacola
-id
-valor_total
-produto produtoNaSacola[]
+> Status do projeto: Em desenvolvimento
 
-## ProdutoNaSacola
-  produto       Produto     @relation(fields: [produtoId], references: [id])
-  produtoId
-  sacola       Sacola     @relation(fields: [sacolaId], references: [id])
-  sacolaId
-@@id([produtoId, sacolaId])
-
-### CASOS DE USO
--Mostrar produtos em estoque
--Adicionar item no estoque
--Mostrar sacola
--Colocar item na sacola
--Remover item da sacola
-
-
+<div>
+<img src="Images/Ex1.jpeg" width="600rem">
+</div>
 
