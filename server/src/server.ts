@@ -1,10 +1,12 @@
 import  express  from "express";
 import { PrismaClient } from "@prisma/client";
 import { converterIntEmReais } from "./utils/converterIntEmReais";
+import cors from 'cors'
 
 const app = express();
 
 app.use(express.json())
+app.use(cors())
 
 const prisma = new PrismaClient({
     log:['query']
@@ -24,7 +26,7 @@ app.get('/produtos', async (request, response) =>{
             }))
  })
 
-// esse get nao ta como many to many tem que relacionar com ProdutoPedido
+
 app.get('/pedidos/:id/produtos', async (request, response)=>{
     const pedidoId = request.params.id
     const produtoPedido = await prisma.produtoPedido.findMany({
@@ -35,7 +37,8 @@ app.get('/pedidos/:id/produtos', async (request, response)=>{
         pedidoId, 
        },
     })
-    return response.json(produtoPedido.map(produtoPedido => {
+
+    return response.json(produtoPedido.map(produtoPedido => {  
         return{
             ...produtoPedido,
         }
