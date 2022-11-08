@@ -3,7 +3,7 @@
 <h2>Portal que simula um site de compras de periféricos</h2>
 
 <div>
-<img src="Images/Ex2.jpeg" width="600rem">
+<img src="Images/Exp1.jpeg" width="600rem">
 </div>
 
 <br>
