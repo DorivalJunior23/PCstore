@@ -1,6 +1,12 @@
 # PCstore
 
-<h2>Portal que simula um site de compras de periféricos</h2><br>
+<h2>Portal que simula um site de compras de periféricos</h2>
+
+<div>
+<img src="Images/Ex2.jpeg" width="600rem">
+</div>
+
+<br>
 
 > Status do projeto: Em desenvolvimento <br>
 > Author: Dorival Junior
@@ -9,14 +15,6 @@ Para rodar o server e a web do projeto na sua máquina, execute no terminal:
 ```
 npm run dev
 ```
-
-
-
-<div>
-<img src="Images/Ex2.jpeg" width="600rem">
-</div>
-
-
 
 
   <h3 align="center">Linguagens e Ferramentas:</h3>
