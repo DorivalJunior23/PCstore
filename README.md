@@ -23,5 +23,6 @@ npm run dev
   <a href="https://www.typescriptlang.org/" target="_blank"><img align="center" alt="Dorival-TS" height="50" width="60" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-plain.svg"/>
    <a href="https://pt-br.reactjs.org/" target="_blank"><img align="center" alt="Dorival-React" height="50" width="60" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"/>
    <a href="https://tailwindcss.com/" target="_blank"><img align="center" alt="Dorival-Tailwindcss" height="50" width="60" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg"/>
+   <a href="" target="_blank"><img align="center" alt="Dorival-NodeJS" height="50" width="60" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-plain.svg"/>
   </div>
 
