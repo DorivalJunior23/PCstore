@@ -6,7 +6,6 @@ import { converterIntEmReais } from '../../utils/ConverterIntEmReais';
 
 
 import axios from "axios"
-import { AiOutlineShoppingCart } from 'react-icons/ai';
 
 
 

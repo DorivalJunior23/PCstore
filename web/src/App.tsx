@@ -5,6 +5,7 @@ import * as Dialog from '@radix-ui/react-dialog'
 
 import { Carrinho } from "./components/Carrinho/Carrinho"
 import {ProdutoBanner} from "./components/Produtos/ProdutoBanner"
+import { ProdutoModal } from './components/Produtos/ProdutoModal';
 import { CarrinhoModal } from './components/Carrinho/CarrinhoModal';
 
 import axios from "axios"
@@ -44,12 +45,20 @@ function App() {
     <div className='grid grid-cols-6 gap-6 mt-16'>
     {produtos.map(produto =>{
       return(
+        <Dialog.Root>
         <ProdutoBanner
         key={produto.id}
         fotoUrl={produto.fotoUrl}
         nome={produto.nome}
         valor={produto.valor}
         />
+        <ProdutoModal
+        key={produto.id}
+        fotoUrl={produto.fotoUrl}
+        nome={produto.nome}
+        valor={produto.valor}
+        />
+        </Dialog.Root>
       )
     })}
        
