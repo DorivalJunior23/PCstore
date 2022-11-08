@@ -1,7 +1,9 @@
-import  express  from "express";
+import  express, { response }  from "express";
 import { PrismaClient } from "@prisma/client";
 import { converterIntEmReais } from "./utils/converterIntEmReais";
 import cors from 'cors'
+import { request } from "http";
+import { json } from "stream/consumers";
 
 const app = express();
 
@@ -30,19 +32,46 @@ app.get('/produtos', async (request, response) =>{
 app.get('/pedidos/:id/produtos', async (request, response)=>{
     const pedidoId = request.params.id
     const produtoPedido = await prisma.produtoPedido.findMany({
-        select:{
+      select:{
         produtoId: true,
-        },
-       where:{
+      },
+        where:{
         pedidoId, 
        },
     })
 
-    return response.json(produtoPedido.map(produtoPedido => {  
+    const produtos = await Promise.all( produtoPedido.map(async(produtoPedido)  => {
+        const id = produtoPedido.produtoId
+        const produto = await prisma.produto.findUnique({
+            where:{
+                id,
+            },
+        })
+        return (produto)
+    }));
+
+    return response.json(produtos.map(produto => {
         return{
-            ...produtoPedido,
+          ...produto,
+       }
+   }))
+    
+})
+
+
+
+app.get('/pedidos/:id', async (request,response)=>{
+    const id = request.params.id
+    const pedido = await prisma.pedido.findUnique({
+        select:{
+            produto: true,
+        },
+        where:{
+            id,
         }
-    }))
+    })
+    return response.json(pedido)
+
 })
 
 app.get('/produtos/:id', async (request, response) =>{

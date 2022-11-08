@@ -7,25 +7,26 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model pedido{
-id String @id @default(uuid())
-valor_total Int
-produto ProdutoPedido[]
+model pedido {
+  id          String          @id @default(uuid())
+  valor_total Int
+  produto     ProdutoPedido[]
 }
 
-model produto{
-  id String @id @default(uuid())
-  nome String 
+model produto {
+  id        String          @id @default(uuid())
+  nome      String
   descricao String
-  fotoUrl String  
-  valor Int
-  pedido ProdutoPedido[]
-
+  fotoUrl   String
+  valor     Int
+  pedido    ProdutoPedido[]
 }
-model ProdutoPedido{
-  produto       produto     @relation(fields: [produtoId], references: [id])
+
+model ProdutoPedido {
+  produto   produto @relation(fields: [produtoId], references: [id])
   produtoId String
-  pedido       pedido     @relation(fields: [pedidoId], references: [id])
-  pedidoId String
-@@id([produtoId, pedidoId])
+  pedido    pedido  @relation(fields: [pedidoId], references: [id])
+  pedidoId  String
+
+  @@id([produtoId, pedidoId])
 }
