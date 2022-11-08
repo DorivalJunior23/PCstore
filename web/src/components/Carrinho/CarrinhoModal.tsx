@@ -1,7 +1,7 @@
 import * as Dialog from '@radix-ui/react-dialog'
 import { useState, useEffect } from 'react';
 
-import { ProdutoList } from '../Produtos/ProdutosList';
+import { ProdutoList } from '../Produto/ProdutosList';
 import { converterIntEmReais } from '../../utils/ConverterIntEmReais';
 
 
@@ -34,7 +34,7 @@ export function CarrinhoModal() {
       <Dialog.Content className='fixed bg-[#2A2634] py-8 px-10 text-white top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-lg w-[1000px] shadow-lg shadow-black/25'>
         <Dialog.Title className='text-3xl font-black'>Produtos no Carrinho</Dialog.Title>
 
-    <ul className='rounded-lg border border-blue-700 mt-2'>
+    <ul className='rounded-lg border-4 border-blue-700 mt-2'>
     {produtos.map(produto =>{
       valorTotal += produto.valor
       return(

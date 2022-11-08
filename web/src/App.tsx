@@ -4,8 +4,8 @@ import logoImg from './assets/Logo.png'
 import * as Dialog from '@radix-ui/react-dialog'
 
 import { Carrinho } from "./components/Carrinho/Carrinho"
-import {ProdutoBanner} from "./components/Produtos/ProdutoBanner"
-import { ProdutoModal } from './components/Produtos/ProdutoModal';
+import {ProdutoBanner} from "./components/Produto/ProdutoBanner"
+import { ProdutoModal } from './components/Produto/ProdutoModal';
 import { CarrinhoModal } from './components/Carrinho/CarrinhoModal';
 
 import axios from "axios"
@@ -56,6 +56,7 @@ function App() {
         key={produto.id}
         fotoUrl={produto.fotoUrl}
         nome={produto.nome}
+        descricao={produto.descricao}
         valor={produto.valor}
         />
         </Dialog.Root>
